@@ -25,5 +25,6 @@ Route::get('/categories', [CategoriesApiController::class, 'index']);
 Route::post('/categories', [CategoriesApiController::class, 'store']);
 Route::get('/categories/{id}', [CategoriesApiController::class, 'getCategory']);
 Route::get('/categories/{category}/product', [ProductsApiController::class, 'index']);
+Route::post('/categories/{category}/product', [ProductsApiController::class, 'store']);
 
 

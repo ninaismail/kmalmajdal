@@ -20,6 +20,9 @@ class ProductsApiController extends Controller
       'description' => $request->description,
       'href' => $request->href,
       'image' => $request->image,
+      'image2' => $request->image2,
+      'image3' => $request->image3,
+      'image4' => $request->image4,
       'price' => $request->price,
     ]);
 
