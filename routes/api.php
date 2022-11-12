@@ -5,6 +5,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CategoriesApiController;
 use App\Http\Controllers\ProductsApiController;
+use App\Http\Controllers\TypesApiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,7 @@ Route::get('/categories/{id}', [CategoriesApiController::class, 'getCategory']);
 Route::get('/categories/{category}/product', [ProductsApiController::class, 'index']);
 Route::post('/categories/{category}/product', [ProductsApiController::class, 'store']);
 
+Route::get('/types', [TypesApiController::class, 'index']);
+Route::post('/types', [TypesApiController::class, 'store']);
+Route::get('/types/{id}', [TypesApiController::class, 'getType']);
 
