@@ -58,6 +58,5 @@ class CategoriesApiController extends Controller
     {
         $category = Category::find($id);
         return $category;
-    }
-    
+    }  
 }
