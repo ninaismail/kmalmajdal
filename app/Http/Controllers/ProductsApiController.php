@@ -12,7 +12,10 @@ class ProductsApiController extends Controller
   {
     return response()->json($category->products()->get());
   }
-
+  public function indexwithoutcategory()
+  {
+    return Product::all();
+  }
   public function store(Request $request, Category $category)
   {
     $product = $category->products()->create([
@@ -28,4 +31,9 @@ class ProductsApiController extends Controller
 
     return $product->toJson();
   }
+  public function getProduct($id)
+  {
+      $product = Product::find($id);
+      return $product;
+  }  
 }
