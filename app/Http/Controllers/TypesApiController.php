@@ -11,7 +11,6 @@ class TypesApiController extends Controller
     {
         return Type::all();
     }
-
     public function store()
     {
         request()->validate([

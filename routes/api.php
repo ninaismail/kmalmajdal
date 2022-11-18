@@ -35,4 +35,4 @@ Route::get('/types/{id}', [TypesApiController::class, 'getType']);
 Route::get('/products', [ProductsApiController::class, 'indexwithoutcategory']);
 Route::get('/products/{id}', [ProductsApiController::class, 'getProduct']);
 
-Route::get('/types/{type}/product', [ProductsApiController::class, 'indextype']);
+Route::get('/types/{type}/product', [ProductsApiController::class, 'indexByType']);
