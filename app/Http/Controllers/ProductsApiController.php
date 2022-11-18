@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Type;
 
 class ProductsApiController extends Controller
 {
   public function index(Category $category)
   {
     return response()->json($category->products()->get());
+  }
+  public function indextype(Type $type)
+  {
+    return response()->json($type->products()->get());
   }
   public function indexwithoutcategory()
   {
