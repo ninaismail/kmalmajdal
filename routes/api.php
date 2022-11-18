@@ -36,3 +36,4 @@ Route::get('/products', [ProductsApiController::class, 'indexwithoutcategory']);
 Route::get('/products/{id}', [ProductsApiController::class, 'getProduct']);
 
 Route::get('/types/{type}/product', [ProductsApiController::class, 'indexByType']);
+Route::get('/types', [TypesApiController::class, 'indexByProducts']);

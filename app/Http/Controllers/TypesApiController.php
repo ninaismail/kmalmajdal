@@ -11,6 +11,9 @@ class TypesApiController extends Controller
     {
         return Type::all();
     }
+    function indexByProducts() {
+        return Type::has('products')->get();
+     }
     public function store()
     {
         request()->validate([
