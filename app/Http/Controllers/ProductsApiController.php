@@ -11,7 +11,7 @@ class ProductsApiController extends Controller
 {
   public function index(Category $category)
   {
-    return response()->json($category->products()->get());
+    return response()->json($category->products()->with("type")->get());
   }
   public function indextype(Type $type)
   {

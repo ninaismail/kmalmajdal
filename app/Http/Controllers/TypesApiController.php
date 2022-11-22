@@ -12,9 +12,6 @@ class TypesApiController extends Controller
     {
         return Type::all();
     }
-    function indexByProducts(Product $product) {
-        return response()->json($product->Type()->get());
-     }
     public function store()
     {
         request()->validate([
