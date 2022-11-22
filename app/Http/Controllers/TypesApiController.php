@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Type;
-use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Product;
 
 class TypesApiController extends Controller
 {
@@ -11,8 +12,8 @@ class TypesApiController extends Controller
     {
         return Type::all();
     }
-    function indexByProducts() {
-        return Type::has('products')->get();
+    function indexByProducts(Product $product) {
+        return response()->json($product->Type()->get());
      }
     public function store()
     {
