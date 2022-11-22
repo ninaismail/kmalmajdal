@@ -19,7 +19,7 @@ class ProductsApiController extends Controller
   }
   public function indexwithoutcategory()
   {
-    return Product::all()->with("type");
+    return Product::with("type")->get();
   }
   public function store(Request $request, Category $category)
   {
