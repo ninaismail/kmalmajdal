@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\CategoriesApiController;
 use App\Http\Controllers\ProductsApiController;
 use App\Http\Controllers\TypesApiController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,6 @@ Route::get('/products', [ProductsApiController::class, 'indexwithoutcategory']);
 Route::get('/products/{id}', [ProductsApiController::class, 'getProduct']);
 
 Route::get('/types/{type}/product', [ProductsApiController::class, 'indexByType']);
+
+Route::get('/register', [UserController::class, 'index']);
+Route::post('/register', [UserController::class, 'store']);

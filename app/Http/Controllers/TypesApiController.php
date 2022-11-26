@@ -10,7 +10,7 @@ class TypesApiController extends Controller
 {
     public function index()
     {
-        return Type::all();
+        return Type::with("products")->get();
     }
     public function store()
     {
