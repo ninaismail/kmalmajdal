@@ -1,12 +1,6 @@
 <?php
-use App\Models\Category;
-use App\Models\Product;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\CategoriesApiController;
-use App\Http\Controllers\ProductsApiController;
-use App\Http\Controllers\TypesApiController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,23 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/categories', [CategoriesApiController::class, 'index']);
-Route::post('/categories', [CategoriesApiController::class, 'store']);
-Route::get('/categories/{id}', [CategoriesApiController::class, 'getCategory']);
-Route::get('/categories/{category}/product', [ProductsApiController::class, 'index']);
-Route::post('/categories/{category}/product', [ProductsApiController::class, 'store']);
-
-Route::get('/types', [TypesApiController::class, 'index']);
-Route::post('/types', [TypesApiController::class, 'store']);
-Route::get('/types/{id}', [TypesApiController::class, 'getType']);
-
-Route::get('/products', [ProductsApiController::class, 'indexwithoutcategory']);
-Route::get('/products/{id}', [ProductsApiController::class, 'getProduct']);
-
-Route::get('/types/{type}/product', [ProductsApiController::class, 'indexByType']);
-
-Route::get('/register', [UserController::class, 'index']);
-Route::post('/register', [UserController::class, 'store']);
