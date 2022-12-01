@@ -21,4 +21,8 @@ class product extends Model
       {
         return $this->belongsTo('App\Models\Type');
       }   
+      public function invoice()
+      {
+        return $this->belongsTo('App\Models\Invoice');
+      }   
     }

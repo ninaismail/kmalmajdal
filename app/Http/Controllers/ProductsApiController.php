@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Type;
+use App\Models\Invoice;
 
 class ProductsApiController extends Controller
 {
@@ -16,6 +17,10 @@ class ProductsApiController extends Controller
   public function indextype(Type $type)
   {
     return response()->json($type->products()->get());
+  }
+  public function indexinvoice(Invoice $invoice)
+  {
+    return response()->json($invoice->products()->get());
   }
   public function indexwithoutcategory()
   {
