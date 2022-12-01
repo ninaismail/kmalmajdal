@@ -37,6 +37,7 @@ Route::get('/products/{id}', [ProductsApiController::class, 'getProduct']);
 Route::get('/types/{type}/product', [ProductsApiController::class, 'indexByType']);
 Route::get('/invoices', [InvoicesApiController::class, 'index']);
 Route::get('/invoices/{invoice}/product', [ProductsApiController::class, 'indexinvoice']);
+Route::post('/invoices', [InvoicesApiController::class, 'store']);
 
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {

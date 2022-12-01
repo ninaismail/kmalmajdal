@@ -15,20 +15,20 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('invoice_no');
-            $table->date('invoice_date');
-            $table->string('title');
+            // $table->integer('invoice_no');
+            // $table->date('invoice_date');
+            // $table->string('title');
             $table->string('client_fname');
             $table->string('client_lname');
             $table->string('client_city');
             $table->string('client_region');
             $table->string('client_phone');
             $table->string('note');
-            $table->string('payment_method');
+            $table->string('payment_methode');
             $table->decimal('tax', $precision = 6, $scale = 3);
             $table->decimal('subtotal', $precision = 6, $scale = 3);
             $table->decimal('grandtotal', $precision = 6, $scale = 3);
-            $table->decimal('totalweight', $precision = 6, $scale = 3);
+            // $table->decimal('totalweight', $precision = 6, $scale = 3);
             $table->timestamps();
         });
     }
