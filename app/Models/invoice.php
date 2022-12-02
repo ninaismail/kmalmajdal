@@ -9,7 +9,7 @@ class invoice extends Model
 {
     use HasFactory;
     protected $fillable = [
-       'client_fname', 'client_lname',
+       'client_fname', 'client_lname','client_country', 'client_company',
         'client_city', 'client_region', 'client_phone', 'note', 'payment_methode',
         'tax', 'subtotal', 'grandtotal'
     ];

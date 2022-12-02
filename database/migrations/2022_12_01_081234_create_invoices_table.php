@@ -20,6 +20,8 @@ return new class extends Migration
             // $table->string('title');
             $table->string('client_fname');
             $table->string('client_lname');
+            $table->string('client_company');
+            $table->string('client_country');
             $table->string('client_city');
             $table->string('client_region');
             $table->string('client_phone');
