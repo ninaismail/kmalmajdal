@@ -46,4 +46,13 @@ class ProductsApiController extends Controller
       $product = Product::find($id);
       return $product;
   }  
+  public function getSearchResults(Request $request) {
+    $data = $request->get('products');
+
+    $searched_products = Product::where('title', 'like', "%{$data}%")->get();
+    
+    return Response::json([
+        'products' => $searched_products
+    ]);
+}
 }
