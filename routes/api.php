@@ -45,3 +45,5 @@ Route::post('/invoices', [InvoicesApiController::class, 'store']);
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('search/{title}',  [ProductsApiController::class, 'getSearchResults']);
