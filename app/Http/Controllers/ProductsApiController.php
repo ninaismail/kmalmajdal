@@ -46,9 +46,8 @@ class ProductsApiController extends Controller
       $product = Product::find($id);
       return $product;
   }  
-  public function getSearchResults($title) {
-
+  public function getSearchResults($title) 
+  {
     return Product::where('title',"LIKE","%".$title."%")->get();
-  
-}
+  }
 }
